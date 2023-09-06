@@ -1,4 +1,4 @@
-package com.depositSystem.depositSystem.model;
+package com.depositsystem.depositsystem.model;
 
 import jakarta.persistence.*;
 
@@ -12,10 +12,15 @@ public class Deposit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long accountId;
-
     private Integer pin;
-
     private Double balance;
+    private Long cin;
+
+    @ManyToOne
+    @JoinColumn(name = "status_id")
+    private Status status;
+
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date created;
     @PrePersist
@@ -23,17 +28,19 @@ public class Deposit {
         created = new Date();
     }
 
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
-    private Customer customer;
+//    @ManyToOne
+//    @JoinColumn(name = "customer_id")
+//    private Customer customer;
 
     @OneToMany(mappedBy = "deposit")
     private List<Transaction>transactions = new ArrayList<>();
 
-    public Deposit(Double balance, Date created, Customer customer) {
+    public Deposit(Integer pin, Double balance, Long cin, Status status, Date created) {
+        this.pin = pin;
         this.balance = balance;
+        this.cin = cin;
+        this.status = status;
         this.created = created;
-        this.customer = customer;
     }
 
     public Deposit() {
@@ -71,13 +78,30 @@ public class Deposit {
         this.created = created;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Long getCin() {
+        return cin;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCin(Long cin) {
+        this.cin = cin;
     }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    //    public Customer getCustomer() {
+//        return customer;
+//    }
+
+//    public void setCustomer(Customer customer) {
+//        this.customer = customer;
+//    }
+
 
     @Override
     public String toString() {
@@ -85,8 +109,9 @@ public class Deposit {
                 "accountId=" + accountId +
                 ", pin=" + pin +
                 ", balance=" + balance +
+                ", cin=" + cin +
+                ", status=" + status +
                 ", created=" + created +
-                ", customer=" + customer +
                 ", transactions=" + transactions +
                 '}';
     }

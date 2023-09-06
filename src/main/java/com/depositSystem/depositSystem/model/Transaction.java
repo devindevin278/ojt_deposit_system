@@ -1,4 +1,4 @@
-package com.depositSystem.depositSystem.model;
+package com.depositsystem.depositsystem.model;
 
 import jakarta.persistence.*;
 

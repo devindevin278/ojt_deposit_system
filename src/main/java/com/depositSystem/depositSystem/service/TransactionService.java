@@ -1,13 +1,11 @@
-package com.depositSystem.depositSystem.service;
+package com.depositsystem.depositsystem.service;
 
-import com.depositSystem.depositSystem.model.Customer;
-import com.depositSystem.depositSystem.model.Deposit;
-import com.depositSystem.depositSystem.model.Transaction;
-import com.depositSystem.depositSystem.model.TransactionType;
-import com.depositSystem.depositSystem.repository.CustomerRepository;
-import com.depositSystem.depositSystem.repository.DepositRepository;
-import com.depositSystem.depositSystem.repository.TransactionRepository;
-import com.depositSystem.depositSystem.repository.TransactionTypeRepository;
+import com.depositsystem.depositsystem.model.Deposit;
+import com.depositsystem.depositsystem.model.Transaction;
+import com.depositsystem.depositsystem.model.TransactionType;
+import com.depositsystem.depositsystem.repository.DepositRepository;
+import com.depositsystem.depositsystem.repository.TransactionRepository;
+import com.depositsystem.depositsystem.repository.TransactionTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

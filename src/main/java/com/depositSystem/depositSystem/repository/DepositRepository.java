@@ -1,10 +1,10 @@
-package com.depositSystem.depositSystem.repository;
+package com.depositsystem.depositsystem.repository;
 
-import com.depositSystem.depositSystem.model.Deposit;
+import com.depositsystem.depositsystem.model.Deposit;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
 public interface DepositRepository extends JpaRepository<Deposit, Long> {
-    List<Deposit> findAllByCustomerCin(Long cin);
+    List<Deposit> findAllByCin(Long cin);
 }

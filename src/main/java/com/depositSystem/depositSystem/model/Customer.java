@@ -1,4 +1,4 @@
-package com.depositSystem.depositSystem.model;
+package com.depositsystem.depositsystem.model;
 
 import jakarta.persistence.*;
 
@@ -6,12 +6,12 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table
+//@Entity
+//@Table
 public class Customer {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cin;
 
     private String name;
@@ -21,8 +21,8 @@ public class Customer {
     private String Address;
     private LocalDate DOB;
 
-    @OneToMany(mappedBy = "customer")
-    private List<Deposit> deposits = new ArrayList<>();
+//    @OneToMany(mappedBy = "customer")
+//    private List<Deposit> deposits = new ArrayList<>();
 
     public Customer() {
     }
@@ -102,7 +102,7 @@ public class Customer {
                 ", phone='" + phone + '\'' +
                 ", Address='" + Address + '\'' +
                 ", DOB=" + DOB +
-                ", deposits=" + deposits +
+//                ", deposits=" + deposits +
                 '}';
     }
 

@@ -1,8 +1,7 @@
-package com.depositSystem.depositSystem.controller;
+package com.depositsystem.depositsystem.controller;
 
-import com.depositSystem.depositSystem.model.Deposit;
-import com.depositSystem.depositSystem.model.Transaction;
-import com.depositSystem.depositSystem.service.TransactionService;
+import com.depositsystem.depositsystem.model.Transaction;
+import com.depositsystem.depositsystem.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

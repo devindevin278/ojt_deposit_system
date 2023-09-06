@@ -1,4 +1,4 @@
-package com.depositSystem.depositSystem;
+package com.depositsystem.depositsystem;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
