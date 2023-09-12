@@ -23,9 +23,14 @@ public class DepositController {
         return depositService.addDeposit(cin, pin);
     }
 
-    @GetMapping("showDeposit/{cin}")
-    public List<Deposit> showDeposit(@PathVariable Long cin) {
+    @GetMapping("showDepositByCin/{cin}")
+    public List<Deposit> showDeposits(@PathVariable Long cin) {
         return depositService.showDeposits(cin);
+    }
+
+    @GetMapping("showDepositById/{account_id}")
+    public Deposit showDeposit(@PathVariable Long account_id) {
+        return depositService.showDeposit(account_id);
     }
 
     @GetMapping("closeDeposit/{account_id}")
