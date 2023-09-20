@@ -11,4 +11,5 @@ public class DepositConfig {
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
+
 }

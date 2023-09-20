@@ -32,7 +32,7 @@ public class Deposit {
 //    @JoinColumn(name = "customer_id")
 //    private Customer customer;
 
-    @OneToMany(mappedBy = "deposit")
+    @OneToMany(mappedBy = "deposit", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
     private List<Transaction>transactions = new ArrayList<>();
 
     public Deposit(Integer pin, Double balance, Long cin, Status status, Date created) {
